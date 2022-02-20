@@ -1,0 +1,587 @@
+/*
+Theme Name: MyCodingWoocom
+Theme URI: https://mycodingproject.com
+Author: MyCodingProject
+Author URI: https://mycodingproject.com
+Description: MyCodingWoocom is a Woocommerce compatible Wordpress theme. You can sell your products using this theme with clean and responsive design.
+Version: 1.0
+Text Domain: mycodingwoocom
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
+Tags: e-commerce, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, translation-ready, blog, right-sidebar, sticky-post, threaded-comments
+*/
+
+/* Site Styles */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+}
+
+a {
+    color: #d35758;
+}
+
+a:hover {
+    color: #af4142;
+    text-decoration: none;
+}
+
+.content-area {
+    min-height: 500px;
+}
+
+/* logo style */
+@media screen and (max-width: 767px) {
+    .custom-logo {
+        width: 160px;
+        height: auto;
+    }
+}
+
+/* Header - Main Menu */
+body #page > header{
+    border-top: 4px solid #FFEB33;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid #eee;    
+}
+
+/* Navigation area style */
+.site-search {
+    padding: 0.7rem 0;
+    background-color: #0000000a;
+    color: white;
+}
+
+.navigation {
+    padding: .7rem 0;
+}
+
+header p.site-title{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+}
+
+header p.site-title~span {
+    color: #000;
+}
+
+header .brand{
+    word-break: break-word;
+    -ms-word-wrap: break-word;
+}
+
+.account{
+    font-weight: 700;
+}
+
+.account ul li a{
+    padding: 0 1rem 0 0 !important;
+}
+
+.main-menu {
+    padding: 0;
+}
+
+.main-menu ul {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.main-menu :not(ul.dropdown-menu) > li {
+    margin: 0 8px 0 0;
+}
+
+.main-menu ul li:last-child {
+    margin-right: 0;
+}
+
+.main-menu > ul li a,
+.navbar-light .navbar-nav .nav-link{  
+    color: #303030; 
+    text-decoration: none;
+    padding: 7px 15px 20px;
+}
+
+.main-menu ul li a.nav-link:first-child{ 
+    padding-left: 0;
+}
+
+.main-menu .navbar-nav .active > .nav-link{ 
+    color: #CA2424; 
+}
+
+.main-menu .dropdown-item:focus, 
+.main-menu .dropdown-item:hover {
+    color: #fff;
+    background-color: #272c33;
+}
+
+.main-menu .dropdown-menu .active, 
+.main-menu .dropdown-item:active {
+    background-color: #d2335b;
+    color: #fff;
+}
+
+.main-menu .dropdown-menu .active a {
+    color: #fff;
+}
+
+/* make the dropdown show on hover */
+.main-menu .dropdown:hover > .dropdown-menu,
+.main-menu .dropup:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Fix the multi level dropdown issue change the place of dropdown to the right */
+ul.dropdown-menu li > ul.dropdown-menu{
+    left: 100%;
+    top: 0;
+}
+
+ul.dropdown-menu li:hover > ul.dropdown-menu,
+ul.dropdown-menu li:focus > ul.dropdown-menu{
+    display: block
+}
+
+/* Add caret to the right of the menu element which has children */
+ul.dropdown-menu .menu-item-has-children > .dropdown-item::after {
+    display: inline-block;
+    margin-left: .5rem;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+}
+
+@media screen and (max-width: 767px) {
+    /* Turn the caret sign down for mobile view */
+    ul.dropdown-menu .menu-item-has-children > .dropdown-item::after {
+        border-left: .3em solid transparent;
+        border-bottom: 0;
+        border-right: .3em solid transparent;
+        border-top: .3em solid;
+    }
+}
+
+/* 
+- Fixed the right side of the submenu to be off the screen by changing the position of the dropdown 
+menu
+- padding-left is for putting the dropdown menu in a position that it can have some distinction
+ */
+@media screen and (max-width: 1023px) {
+    ul.dropdown-menu li > ul.dropdown-menu{
+        padding-left: 5%;
+        left: 0;
+        top: 100%;
+    }
+}
+
+/* Mobile hamburger icon - Mobile Navbar Toggler */
+.navbar-light .navbar-toggler-icon  {
+    background-image: url('img/hamburger-menu.svg');
+}
+
+.main-menu .navbar-toggler{
+    border: none;
+    padding-right: 0;    
+}
+
+/* Cart Icon in the header */
+/* Cart Icon and Items Count */
+.shopping-cart {
+    position: relative;
+    padding: 5px 25px;
+}
+
+.shopping-cart .cart-icon {
+    background-image: url('img/cart.svg');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.shopping-cart .cart-items {
+    position: absolute;
+    background-color: #D2335B;
+    color: #fff;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    font-weight: 600;
+    right: 5px;
+}
+
+.footer-widgets {
+    background-color: aqua;
+}
+
+.copyright {
+    background-color: bisque;
+}
+
+.footer-menu {
+    background-color: cornsilk;
+}
+
+.footer-menu ul, .footer-widgets ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.footer-menu ul li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+.footer-menu ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-menu ul li a {
+    color: crimson;
+}
+
+.footer-menu ul li.current-menu-item a {
+    color: black;
+}
+
+/* Woocommerce Styles */
+/*--------------------*/
+/* Woocommerce Grid System for Checkout page especially */
+/*
+flex => flex-grow flex-shrink flex-basis
+*/
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media all and (max-width: 767px) {
+    .woocommerce .col2-set .col-1,
+    .woocommerce .col2-set .col-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }   
+}
+
+/* Product Archive - Shop Page */
+.shop-content {
+    padding: 3rem 0;
+}
+
+.shop-content row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.woocommerce .woocommerce-breadcrumb a {
+    font-weight: 700;
+}
+
+.woocommerce ul.products {
+    padding-top: 2rem;
+    border-top: solid 1px #eee;
+}
+
+.woocommerce ul.products li.product a img {
+    /* box-shadow: horizontal off-set, vertical off-set, blur-effect, shadow color */
+    box-shadow: 2px 3px 5px #ccc;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    color: #000;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.woocommerce ul.products li.product p {
+    color: #000;
+}
+
+.woocommerce ul.products li.product .price {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.woocommerce ul.products li.product .price ins {
+    font-size: 1.3rem;
+}
+
+.woocommerce ul.products li.product .onsale {
+    top: 10px;
+    right: 10px;
+    background-color: #D2335B;
+    margin: 0;
+    padding: 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+    color: #000;
+    padding: 12px;
+}
+
+/* Single Product Page - and shop page, product archive pages together */
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    background-color: #ffeb8a;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+    background-color: #ffe252;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce ul.products li.product .button {
+    background-color: #D2335B;
+    color: #fff;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce ul.products li.product .button:hover {
+    background-color: #bd3759;
+    color: #fff;
+}
+
+.product_meta > span{
+    display: block;
+}
+
+.woocommerce div.product p.price del,
+.woocommerce div.product span.price del,
+.woocommerce ul.products li.product .price del .woocommerce-Price-amount {
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.woocommerce div.product p.price ins,
+.woocommerce div.product span.price ins,
+.woocommerce-Price-amount {
+    font-size: 25px;
+    color: #000;
+    font-weight: 700;
+}
+
+.woocommerce span.onsale {
+    top: 19px;
+    left: 19px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    background-color: #D2335B;
+    font-weight: 500;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Cart Page */
+.woocommerce-info {
+    border-top-color: #bd3759;
+}
+
+.woocommerce-info::before {
+    color: #bd3759;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    width: 150px;
+}
+
+.woocommerce-cart table.cart img {
+    width: 64px;
+}
+
+/* Checkout Page */
+.woocommerce form .form-row {
+    display: block;
+}
+
+.woocommerce-checkout #customer_details {
+    margin-bottom: 20px;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+    padding: 5px 3px;
+}
+
+.woocommerce table.shop_table{
+    border-collapse: collapse;
+}
+
+.woocommerce table.shop_table thead {
+    background-color: #D2335B;
+    color: #fff;
+}
+
+/* Search Form and Search Template */
+.search-form button {
+    background-image: url('img/search.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    width: 23px;
+    height: 23px;
+}
+
+.search-form input[type=search] {
+    border: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: .3rem 1rem;
+    margin-right: .3rem;
+}
+
+/* Flex Slider overrides */
+.flexslider{
+    border: 0 !important;
+    margin: 0;
+}
+
+.flexslider .slides {
+    padding: 0 !important;
+}
+
+.flex-control-nav {
+    bottom: 10px !important;
+}
+
+.flex-control-paging li a {
+    height: 15px !important;
+    width: 15px !important;
+}
+
+.flex-control-paging li a.flex-active {
+    background: #D2335B !important;
+}
+
+.flex-direction-nav .flex-prev {
+    left: 15px !important;
+}
+
+.flex-direction-nav .flex-next {
+    right: 15px !important;
+}
+
+.slide-details-container {
+    color: #FFF;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    max-width: 80%;
+}
+
+.slide-details-container h1{
+    font-family: 'Seaweed Script';
+    font-size: 3.7rem;
+}
+
+.slide-details-container .subtitle{
+    font-size: 1.3em;
+    margin-bottom: 15px;        
+}
+
+.slide-details-container a{
+    background-color: #D2335B;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 0.8em;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.slide-details-container a:hover{
+    text-decoration: none;
+}
+
+/* Blog styles */
+
+
+/* Responsive code for the slider */
+@media all and (max-width: 767px) {
+    .slide-details-container{
+        margin: 0 30px; 
+        max-width: 350px;       
+    }
+
+    .slide-details-container h1{
+        font-size: 2.5rem;
+    }
+
+    .slide-details-container .subtitle {
+        font-size: 1.2em;
+    }
+
+    .slide-details-container a {
+        padding: 0.5em;
+    }
+}
+
+@media all and (max-width: 575px) {
+    .flexslider img{
+        height: 400px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Theme General Styles */
+.size-auto, .size-full, .size-large,
+.size-medium, .size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Screen reader text styles */
+/* Text meant only for screen readers. */
+/* Hide it for on the browser but keep it for screen readers */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
